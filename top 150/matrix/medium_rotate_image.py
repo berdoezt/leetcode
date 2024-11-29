@@ -30,8 +30,15 @@ class Solution:
         Do not return anything, modify matrix in-place instead.
         """
 
+        # transpose
+        for i in range(len(matrix[0])):
+            for j in range(i+1):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
         
-        pass
+        # swap column
+        for i in range(len(matrix[0])):
+            for j in range(int(len(matrix[0]) / 2)):
+                matrix[i][j], matrix[i][len(matrix[0]) - j - 1] = matrix[i][len(matrix[0]) - j - 1], matrix[i][j]
 
 sol = Solution()
 
